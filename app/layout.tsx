@@ -1,32 +1,9 @@
 import type { Metadata } from "next";
-import {
-  Geist,
-  Geist_Mono,
-  Syne,
-  Syne_Mono,
-  Prata,
-  Kalam,
-} from "next/font/google";
+import { Syne } from "next/font/google";
 import "./globals.css";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 const syne = Syne({
   variable: "--font-syne",
-  subsets: ["latin"],
-});
-
-const prata = Prata({
-  // variable: "--font-prata-sans",
-  weight: "400",
   subsets: ["latin"],
 });
 
@@ -42,13 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        // className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-        className={`${syne.className}  antialiased`}
-        // className={`${prata.className}  antialiased`}
-      >
-        {children}
-      </body>
+      <body className={`${syne.className}  antialiased`}>{children}</body>
     </html>
   );
 }
