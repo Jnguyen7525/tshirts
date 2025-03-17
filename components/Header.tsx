@@ -28,7 +28,8 @@ function Header() {
   return (
     <div className="flex items-center justify-between  p-5 z-50 bg-white -mx-5 px-10">
       <div className="relative cursor-pointer hover:opacity-80">
-        <div className="font-bold  text-lg  ">Rêve d'Audace</div>
+        {/* <div className="font-bold  text-lg  ">Rêve d'Audace</div> */}
+        <div className="font-bold text-lg">Rêve d&apos;Audace</div>
         <div className="w-20 h-20 absolute -top-6 left-7 opacity-30">
           <Image
             className=" "
