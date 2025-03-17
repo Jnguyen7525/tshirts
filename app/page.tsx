@@ -1,19 +1,12 @@
 "use client";
 
-import Carousel from "@/components/Carousel";
 import Filter from "@/components/Filter";
 import Footer from "@/components/Footer";
 import Grid from "@/components/Grid";
 import Header from "@/components/Header";
 import Navbar from "@/components/Navbar";
-import Image from "next/image";
 import { BsX } from "react-icons/bs";
-import {
-  useStore,
-  sizeOptions,
-  colorOptions,
-  styleOptions,
-} from "@/store/store";
+import { useStore } from "@/store/store";
 
 const productsData = [
   // mens
@@ -375,7 +368,6 @@ export default function Home() {
         <Header />
       </div>
 
-      {/* <Carousel data={DATA} /> */}
       <Navbar />
       <div className="flex flex-col sm:flex-row justify-center sm:justify-between">
         <div className="">

@@ -3,7 +3,6 @@
 import React, { useState } from "react";
 import { IoFilterOutline } from "react-icons/io5";
 import { RxChevronDown } from "react-icons/rx";
-import ToggleBar from "./ToggleBar";
 import ColorPicker from "./ColorPicker";
 import SizeSelector from "./SizePicker";
 import StylePicker from "./StylePicker";

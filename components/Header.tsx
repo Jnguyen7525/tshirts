@@ -2,12 +2,9 @@
 
 import Image from "next/image";
 import React, { useState } from "react";
-import { BsCart2, BsSearch } from "react-icons/bs";
-import { FaRestroom } from "react-icons/fa";
 import { HiOutlineShoppingBag } from "react-icons/hi";
 import { IoPersonOutline } from "react-icons/io5";
-import { PiTShirtDuotone } from "react-icons/pi";
-import { RxAvatar } from "react-icons/rx";
+
 import ClickOutsideWrapper from "./ClickOutsideWrapper";
 
 function Header() {
@@ -60,15 +57,6 @@ function Header() {
       </div> */}
 
       <div className="flex items-center justify-center space-x-5 ">
-        {/* <div className="flex items-center justify-center space-x-1 cursor-pointer text-lg hover:opacity-80">
-          <PiTShirtDuotone className="text-2xl" />
-          <span className="hidden sm:block">AI Design</span>
-        </div>
-
-        <div className="flex items-center justify-center space-x-1 cursor-pointer text-lg hover:opacity-80">
-          <FaRestroom className="text-2xl" />
-          <span className="hidden sm:block">Dressing Room</span>
-        </div> */}
         <div className="flex items-center justify-center space-x-1 cursor-pointer hover:opacity-80">
           <IoPersonOutline className="text-lg" />
           <span className="hidden sm:block">Sign In</span>

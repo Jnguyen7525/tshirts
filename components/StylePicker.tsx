@@ -1,5 +1,5 @@
 import { useStore } from "@/store/store";
-import React, { useState } from "react";
+import React from "react";
 
 // Define the type for each style option
 type StyleOption = string;

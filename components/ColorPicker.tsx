@@ -1,7 +1,7 @@
 "use client";
 
 import { useStore } from "@/store/store";
-import React, { useState } from "react";
+import React from "react";
 
 const colorOptions = [
   { color: "Black", code: "#0b0b0b" },
