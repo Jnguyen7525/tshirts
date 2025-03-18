@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 interface Product {
@@ -18,7 +19,8 @@ const Grid: React.FC<{ products: Product[] }> = ({ products }) => {
       //   }}
     >
       {products.map((product) => (
-        <div
+        <Link
+          href={`/product/${product.id}`}
           key={product.id}
           className="bg-gradient-to-b from-[#e1e1e1] to-[#effaf9]  p-4 flex flex-col items-center cursor-pointer hover:opacity-80 "
         >
@@ -39,7 +41,7 @@ const Grid: React.FC<{ products: Product[] }> = ({ products }) => {
             ))}
           </p> */}
           <p className="text-sm text-gray-600">{product.info}</p>
-        </div>
+        </Link>
       ))}
     </div>
   );
