@@ -6,6 +6,7 @@ import { HiOutlineShoppingBag } from "react-icons/hi";
 import { IoPersonOutline } from "react-icons/io5";
 
 import ClickOutsideWrapper from "./ClickOutsideWrapper";
+import Link from "next/link";
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -27,7 +28,7 @@ function Header() {
 
   return (
     <div className="flex items-center justify-between  p-5 z-50 bg-white -mx-5 px-10">
-      <div className="relative cursor-pointer hover:opacity-80">
+      <Link href={"/"} className="relative cursor-pointer hover:opacity-80">
         {/* <div className="font-bold  text-lg  ">Rêve d'Audace</div> */}
         <div className="font-bold text-lg">Rêve d&apos;Audace</div>
         <div className="w-20 h-20 absolute -top-6 left-7 opacity-30">
@@ -43,7 +44,7 @@ function Header() {
             // }}
           />
         </div>
-      </div>
+      </Link>
 
       {/* <div className="flex flex-1 mx-5 space-x-1 items-center justify-start bg-white border p-1 rounded-sm w-1/2">
         <BsSearch className="" />
@@ -71,50 +72,24 @@ function Header() {
         {/* SUPER COOL ANIMATED HAMBURGER=>X CLOSE ICON HEHEHE */}
         <ClickOutsideWrapper isOpen={menuOpen} onClose={handleMenuOpenClose}>
           {menuOpen && (
-            <div className="absolute right-0 -bottom-[300px] w-48 z-50 border-[0.25px] shadow-white bg-[#2c2c2c] rounded-md flex flex-col space-y-2 ">
+            <div className="absolute right-0 -bottom-[220px] w-48 z-50 border-[0.25px]  bg-gradient-to-b from-[#e1e1e1] to-[#effaf9] rounded-md flex flex-col space-y-2 ">
               {user && (
-                <div className="hover:bg-white hover:text-[#ff5f5f] w-full p-2 cursor-pointer">
+                <div className=" w-full p-2 cursor-pointer hover:opacity-80">
                   Account
                 </div>
               )}
-              <div className="hover:bg-white hover:text-[#ff5f5f] w-full p-2 cursor-pointer">
-                Home
+              <div className=" w-full p-2 cursor-pointer hover:opacity-80">
+                Men
               </div>
-              <div className="hover:bg-white hover:text-[#ff5f5f] w-full p-2 cursor-pointer">
-                Dark Theme
+              <div className=" w-full p-2 cursor-pointer hover:opacity-80">
+                Women
               </div>
-              <div className="hover:bg-white hover:text-[#ff5f5f] w-full p-2 cursor-pointer">
-                Drawing Panel
+              <div className=" w-full p-2 cursor-pointer hover:opacity-80">
+                Track Order
               </div>
-              <div className="hover:bg-white hover:text-[#ff5f5f] w-full p-2 cursor-pointer">
-                Pricing
+              <div className=" w-full p-2 cursor-pointer hover:opacity-80">
+                Shipping and Returns
               </div>
-              <div className="hover:bg-white hover:text-[#ff5f5f] w-full p-2 cursor-pointer">
-                Settings
-              </div>
-              {user ? (
-                <button
-                  onPointerDown={handleLogout}
-                  className="hover:bg-white hover:text-[#ff5f5f] rounded-lg lg:p-2 cursor-pointer z-50 text-sm"
-                >
-                  Logout
-                </button>
-              ) : (
-                <div className="flex">
-                  <button
-                    onPointerDown={handleSignup}
-                    className="hover:bg-white hover:text-[#ff5f5f] rounded-lg p-2 cursor-pointer"
-                  >
-                    Sign Up
-                  </button>
-                  <button
-                    onPointerDown={handleLogin}
-                    className="hover:bg-white hover:text-[#ff5f5f] rounded-lg p-2 cursor-pointer"
-                  >
-                    Login
-                  </button>
-                </div>
-              )}
             </div>
           )}
           <button

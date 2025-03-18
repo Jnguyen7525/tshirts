@@ -29,7 +29,7 @@ const ColorPicker = () => {
             key={color.color}
             className={`w-12 h-12 rounded border-2 ${
               selectedColors.some((c) => c.color === color.color)
-                ? "border-black"
+                ? "border-blue-500"
                 : "border-transparent"
             }`}
             style={{ backgroundColor: color.code }}

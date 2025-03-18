@@ -22,6 +22,8 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({
 }) => {
   const [openDescription, setOpenDescription] = useState(false);
   const [openShipping, setOpenShipping] = useState(false);
+  const [selectedColor, setSelectedColor] = useState<string | null>(null);
+  const [selectedSize, setSelectedSize] = useState<string | null>(null);
 
   return (
     <div className="flex flex-col items-start justify-start space-y-4">
@@ -32,14 +34,31 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({
         <div>
           <h3 className="font-semibold mb-2">Available Colors:</h3>
           <div className="flex space-x-2">
-            {color.map((color) => (
+            {/* {color.map((color) => (
               <span
                 key={color.color}
-                className="w-6 h-6 rounded-full border"
+                className="w-6 h-6 rounded-full border cursor-pointer hover:opacity-80"
                 style={{ backgroundColor: color.code }}
+              />
+            ))} */}
+            {color.map((c) => (
+              <span
+                key={c.color}
+                className={`w-6 h-6 rounded-full border-2 cursor-pointer hover:opacity-80 ${
+                  selectedColor === c.color
+                    ? "border-blue-500"
+                    : "border-transparent"
+                }`}
+                style={{ backgroundColor: c.code }}
+                onClick={() => setSelectedColor(c.color)}
               />
             ))}
           </div>
+          {selectedColor && (
+            <p className="mt-2 text-sm text-gray-600">
+              Selected Color: {selectedColor}
+            </p>
+          )}
         </div>
       )}
 
@@ -47,22 +66,40 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({
         <div>
           <h3 className="font-semibold mb-2">Available Sizes:</h3>
           <div className="flex space-x-2">
-            {size.map((size) => (
+            {/* {size.map((size) => (
               <span
                 key={size}
-                className="border rounded px-3 py-1 bg-gray-200 text-sm"
+                className="border rounded px-3 py-1 bg-gray-200 text-sm cursor-pointer hover:opacity-80"
               >
                 {size}
               </span>
+            ))} */}
+            {size.map((s) => (
+              <span
+                key={s}
+                className={`border-2 rounded px-3 py-1 text-sm cursor-pointer hover:opacity-80 ${
+                  selectedSize === s
+                    ? "border-blue-500 bg-blue-100"
+                    : "border-gray-300 bg-gray-200"
+                }`}
+                onClick={() => setSelectedSize(s)}
+              >
+                {s}
+              </span>
             ))}
           </div>
+          {selectedSize && (
+            <p className="mt-2 text-sm text-gray-600">
+              Selected Size: {selectedSize}
+            </p>
+          )}
         </div>
       )}
 
       {description && (
         <div className="flex flex-col w-[300px]">
           <div
-            className="font-semibold flex justify-between items-center w-full"
+            className="font-semibold flex justify-between items-center w-full cursor-pointer hover:opacity-80"
             onClick={() => setOpenDescription(!openDescription)}
           >
             <span>Product Description:</span>
@@ -85,7 +122,7 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({
       {shipping && (
         <div className="flex flex-col w-[300px]">
           <div
-            className="font-semibold flex justify-between items-center"
+            className="font-semibold flex justify-between items-center cursor-pointer hover:opacity-80"
             onClick={() => setOpenShipping(!openShipping)}
           >
             <span>Shipping & Returns:</span>
