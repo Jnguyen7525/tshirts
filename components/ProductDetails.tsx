@@ -1,59 +1,3 @@
-// "use client";
-
-// import React from "react";
-
-// interface ProductDetailsProps {
-//   name: string;
-//   info: string;
-//   color?: { color: string; code: string }[];
-//   size?: string[];
-// }
-
-// const ProductDetails: React.FC<ProductDetailsProps> = ({
-//   name,
-//   info,
-//   color,
-//   size,
-// }) => {
-//   return (
-//     <div className="flex flex-col items-start justify-start">
-//       <h1 className="text-2xl font-bold mb-4">{name}</h1>
-//       <p className="text-gray-600 mb-4">{info}</p>
-//       {color && (
-//         <div className="mb-4">
-//           <h3 className="font-bold mb-2">Available Colors:</h3>
-//           <div className="flex space-x-2">
-//             {color.map((color) => (
-//               <span
-//                 key={color.color}
-//                 className="w-6 h-6 rounded-full border"
-//                 style={{ backgroundColor: color.code }}
-//               />
-//             ))}
-//           </div>
-//         </div>
-//       )}
-//       {size && (
-//         <div>
-//           <h3 className="font-bold mb-2">Available Sizes:</h3>
-//           <div className="flex space-x-2">
-//             {size.map((size) => (
-//               <span
-//                 key={size}
-//                 className="border rounded px-3 py-1 text-sm bg-gray-200"
-//               >
-//                 {size}
-//               </span>
-//             ))}
-//           </div>
-//         </div>
-//       )}
-//     </div>
-//   );
-// };
-
-// export default ProductDetails;
-
 "use client";
 
 import React, { useState } from "react";
@@ -78,8 +22,6 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({
 }) => {
   const [openDescription, setOpenDescription] = useState(false);
   const [openShipping, setOpenShipping] = useState(false);
-  const [openSize, setOpenSize] = useState(false);
-  const [openColor, setOpenColor] = useState(false);
 
   return (
     <div className="flex flex-col items-start justify-start space-y-4">

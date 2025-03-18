@@ -12,12 +12,7 @@ interface Product {
 
 const Grid: React.FC<{ products: Product[] }> = ({ products }) => {
   return (
-    <div
-      className="grid gap-0  grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 rounded-sm overflow-hidden "
-      //   style={{
-      //     gridTemplateColumns: "repeat(3, 1fr)", // Maximum 3 columns
-      //   }}
-    >
+    <div className="grid gap-0  grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 rounded-sm overflow-hidden ">
       {products.map((product) => (
         <Link
           href={`/product/${product.id}`}
