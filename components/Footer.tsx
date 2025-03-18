@@ -5,15 +5,6 @@ function Footer() {
   return (
     <div className="flex flex-col space-y-16 bg-gradient-to-b from-[#e1e1e1] to-[#effaf9] -mx-5 px-10 py-20">
       <div className="flex flex-wrap justify-between sm:justify-start sm:space-x-20 ">
-        {/* <div className="flex flex-col space-y-1">
-        <div className="font font-semibold">Shop</div>
-        <div className="cursor-pointer hover:opacity-80">Popular Now</div>
-        <div className="cursor-pointer hover:opacity-80">New</div>
-        <div className="cursor-pointer hover:opacity-80">Sale</div>
-        <div className="cursor-pointer hover:opacity-80">Graphic Tees</div>
-        <div className="cursor-pointer hover:opacity-80">Blank Tees</div>
-        <div className="cursor-pointer hover:opacity-80">Custom Tees</div>
-      </div> */}
         <div className="flex flex-col space-y-1">
           <div className="font font-semibold">Help</div>
           <div className="cursor-pointer hover:opacity-80">

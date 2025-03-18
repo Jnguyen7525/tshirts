@@ -1,29 +1,75 @@
 "use client";
 
-import React, { useState } from "react";
+import { useCartStore } from "@/store/cartStore";
+import React, { useEffect, useState } from "react";
 import { RxChevronDown } from "react-icons/rx";
 
 interface ProductDetailsProps {
+  productId: string;
   name: string;
   info: string;
   color: { color: string; code: string }[];
   size: string[];
   description: string[]; // Array of description items
   shipping: { Location: string; Delivery: string }[]; // Array of shipping info
+  price: string;
 }
 
 const ProductDetails: React.FC<ProductDetailsProps> = ({
+  productId,
   name,
   info,
   color,
   size,
   description,
   shipping,
+  price,
 }) => {
   const [openDescription, setOpenDescription] = useState(false);
   const [openShipping, setOpenShipping] = useState(false);
   const [selectedColor, setSelectedColor] = useState<string | null>(null);
   const [selectedSize, setSelectedSize] = useState<string | null>(null);
+  const [quantity, setQuantity] = useState<number>(1); // Add quantity state
+
+  const addToCart = useCartStore((state) => state.addToCart); // Access the addToCart function
+  const cart = useCartStore((state) => state.cart);
+
+  // Handle Add to Cart
+  const handleAddToCart = () => {
+    if (!selectedColor || !selectedSize) {
+      alert("Please select a color and size before adding to cart.");
+      return;
+    }
+
+    addToCart({
+      productId,
+      name,
+      price,
+      selectedSize,
+      selectedColor,
+      quantity,
+    });
+
+    console.log(
+      "cart",
+      cart,
+      {
+        productId,
+        name,
+        price,
+        selectedSize,
+        selectedColor,
+        quantity,
+      },
+      quantity
+    );
+
+    alert("Product added to cart!");
+  };
+
+  useEffect(() => {
+    console.log("cart", cart);
+  }, [cart]);
 
   return (
     <div className="flex flex-col items-start justify-start space-y-4">
@@ -34,13 +80,6 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({
         <div>
           <h3 className="font-semibold mb-2">Available Colors:</h3>
           <div className="flex space-x-2">
-            {/* {color.map((color) => (
-              <span
-                key={color.color}
-                className="w-6 h-6 rounded-full border cursor-pointer hover:opacity-80"
-                style={{ backgroundColor: color.code }}
-              />
-            ))} */}
             {color.map((c) => (
               <span
                 key={c.color}
@@ -66,14 +105,6 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({
         <div>
           <h3 className="font-semibold mb-2">Available Sizes:</h3>
           <div className="flex space-x-2">
-            {/* {size.map((size) => (
-              <span
-                key={size}
-                className="border rounded px-3 py-1 bg-gray-200 text-sm cursor-pointer hover:opacity-80"
-              >
-                {size}
-              </span>
-            ))} */}
             {size.map((s) => (
               <span
                 key={s}
@@ -95,6 +126,26 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({
           )}
         </div>
       )}
+
+      {/* Quantity Selector */}
+      <div>
+        <h3 className="font-semibold mb-2">Quantity:</h3>
+        <input
+          type="number"
+          min="1"
+          value={quantity}
+          onChange={(e) => setQuantity(Number(e.target.value))}
+          className="border rounded px-2 py-1 w-16 text-center"
+        />
+      </div>
+
+      {/* Add to Cart Button */}
+      <button
+        className="w-full py-1 text-white rounded-sm bg-[#272343] cursor-pointer hover:opacity-80"
+        onClick={handleAddToCart}
+      >
+        Add to Cart
+      </button>
 
       {description && (
         <div className="flex flex-col w-[300px]">

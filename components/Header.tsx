@@ -7,8 +7,12 @@ import { IoPersonOutline } from "react-icons/io5";
 
 import ClickOutsideWrapper from "./ClickOutsideWrapper";
 import Link from "next/link";
+import { useCartStore } from "@/store/cartStore";
 
 function Header() {
+  const cart = useCartStore((state) => state.cart); // Access the cart state
+  const cartItemCount = cart.reduce((total, item) => total + item.quantity, 0); // Calculate total items in the cart
+
   const [menuOpen, setMenuOpen] = useState(false);
 
   const handleMenuOpenToggle = () => {
@@ -60,9 +64,15 @@ function Header() {
           <span className="hidden sm:block">Sign In</span>
         </div>
 
-        <div className="flex items-center justify-center space-x-1 cursor-pointer  hover:opacity-80">
+        <div className="flex items-center justify-center space-x-1 cursor-pointer  hover:opacity-80 relative">
           <HiOutlineShoppingBag className="text-lg" />
           <span className="hidden sm:block">Cart</span>
+          {/* Cart count bubble */}
+          {cartItemCount > 0 && (
+            <div className="absolute -top-1 -left-2 bg-blue-500 text-white text-xs font-bold rounded-full w-4 h-4 flex items-center justify-center">
+              {cartItemCount}
+            </div>
+          )}
         </div>
 
         {/* SUPER COOL ANIMATED HAMBURGER=>X CLOSE ICON HEHEHE */}

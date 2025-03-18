@@ -650,12 +650,14 @@ export default async function ProductPage({
         {/* Details on the right */}
         <div className="flex flex-col items-start justify-start ">
           <ProductDetails
+            productId={product.id}
             name={product.name}
             info={product.info}
             color={product.color}
             size={product.size}
             description={product.description}
             shipping={product.shipping}
+            price={product.info}
           />
         </div>
       </div>

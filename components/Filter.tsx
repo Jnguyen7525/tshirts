@@ -47,10 +47,7 @@ function Filter() {
           </div>
           {openStyle && <StylePicker />}
         </div>
-        {/* <div className="flex justify-between cursor-pointer hover:opacity-80 border-b p-3">
-          <div>Category</div>
-          <RxChevronDown className="bg-gradient-to-b from-[#e1e1e1] to-[#effaf9] rounded-full text-3xl p-2" />
-        </div> */}
+
         <div className="flex flex-col space-y-3 border-b p-3">
           <div
             className="flex justify-between cursor-pointer hover:opacity-80 "
@@ -79,17 +76,6 @@ function Filter() {
           </div>
           {openSize && <SizeSelector />}
         </div>
-        {/* <div className="flex justify-between cursor-pointer hover:opacity-80 border-b p-3">
-          <div>Men</div>
-          <div>
-            <ToggleBar />
-          </div>
-          <div>Women</div>
-        </div> */}
-        {/* <div className="flex justify-between cursor-pointer hover:opacity-80 border-b p-3">
-          <div>In stock only</div>
-          <RxChevronDown className="bg-gradient-to-b from-[#e1e1e1] to-[#effaf9] rounded-full text-3xl p-2" />
-        </div> */}
       </div>
     </div>
   );
