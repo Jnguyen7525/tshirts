@@ -622,7 +622,7 @@ const productsData = [
 export default async function ProductPage({
   params,
 }: {
-  params: { productId: string };
+  params: Promise<{ productId: string }>;
 }) {
   {
     // Await the params promise to resolve
