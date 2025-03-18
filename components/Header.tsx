@@ -22,10 +22,6 @@ function Header() {
 
   const user = true;
 
-  const handleLogin = () => {};
-  const handleLogout = () => {};
-  const handleSignup = () => {};
-
   return (
     <div className="flex items-center justify-between  p-5 z-50 bg-white -mx-5 px-10">
       <Link href={"/"} className="relative cursor-pointer hover:opacity-80">
