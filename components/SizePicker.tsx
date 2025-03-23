@@ -16,7 +16,7 @@ const SizeSelector: React.FC = () => {
 
   return (
     <div className="">
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+      <div className="grid grid-cols-3 gap-4">
         {sizeOptions.map((size) => (
           <label key={size} className="flex items-center">
             <input

@@ -15,11 +15,6 @@ function Header() {
   const cart = useCartStore((state) => state.cart); // Access the cart state
   const cartItemCount = cart.reduce((total, item) => total + item.quantity, 0); // Calculate total items in the cart
 
-  // const cart = useCartStore((state) => state.cart); // Access the cart state
-  // const cartItemCount = cart.reduce((total, item) => total + item.quantity, 0); // Calculate total items in the cart
-
-  // const [menuOpen, setMenuOpen] = useState(false); // State for the menu drawer
-  // const [cartOpen, setCartOpen] = useState(false); // State for the cart drawer
   const handleRemoveItem = (productId: string) => {
     removeFromCart(productId);
   };
@@ -63,10 +58,6 @@ function Header() {
             fill
             quality={100}
             src={"/mylogo.svg"}
-            // style={{
-            //   objectFit: "cover", // Ensures the image fills the container
-            //   objectPosition: "center", // Centers the image within the container
-            // }}
           />
         </div>
       </Link>
@@ -130,12 +121,6 @@ function Header() {
                     />
                     <div className="flex-1">
                       <h3 className="font-semibold">{item.name}</h3>
-                      {/* <p className="text-sm text-gray-600">
-                      Size: {item.selectedSize || "N/A"}
-                    </p>
-                    <p className="text-sm text-gray-600">
-                      Color: {item.selectedColor || "N/A"}
-                    </p> */}
 
                       {/* <p className="text-sm text-gray-600">Price: {item.price}</p> */}
                       <p className="text-sm text-gray-600"> {"$50"}</p>
@@ -196,27 +181,6 @@ function Header() {
 
         {/* SUPER COOL ANIMATED HAMBURGER=>X CLOSE ICON HEHEHE */}
         <ClickOutsideWrapper isOpen={menuOpen} onClose={handleMenuOpenClose}>
-          {/* {menuOpen && (
-            <div className="absolute right-0 -bottom-[220px] w-48 z-50 border-[0.25px]  bg-gradient-to-b from-[#e1e1e1] to-[#effaf9] rounded-md flex flex-col space-y-2 ">
-              {user && (
-                <div className=" w-full p-2 cursor-pointer hover:opacity-80">
-                  Account
-                </div>
-              )}
-              <div className=" w-full p-2 cursor-pointer hover:opacity-80">
-                Men
-              </div>
-              <div className=" w-full p-2 cursor-pointer hover:opacity-80">
-                Women
-              </div>
-              <div className=" w-full p-2 cursor-pointer hover:opacity-80">
-                Track Order
-              </div>
-              <div className=" w-full p-2 cursor-pointer hover:opacity-80">
-                Shipping and Returns
-              </div>
-            </div>
-          )} */}
           {/* Drawer for the Menu */}
           <Drawer
             isOpen={menuOpen}

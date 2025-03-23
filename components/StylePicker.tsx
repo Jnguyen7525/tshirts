@@ -6,9 +6,9 @@ type StyleOption = string;
 
 const styles: StyleOption[] = [
   "T-Shirt",
-  "Oversized T-Shirt",
+  "Oversized",
   "Cropped",
-  "Tank Top",
+  // "Tank Top",
   "Sweater",
   "Hoodie",
 ];
@@ -26,8 +26,7 @@ const StylePicker: React.FC = () => {
 
   return (
     <div className="p-4">
-      <h2 className="text-lg font-bold mb-4">Select Styles</h2>
-      <div className="flex flex-col gap-2">
+      <div className="grid grid-cols-3 sm:grid-cols-1 gap-4">
         {styles.map((style) => (
           <label key={style} className="flex items-center">
             <input

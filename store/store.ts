@@ -19,6 +19,8 @@ type StoreState = {
   setSelectedColors: (colors: ColorOption[]) => void;
   selectedStyles: StyleOption[];
   setSelectedStyles: (styles: StyleOption[]) => void;
+  selectedGender: string; // Added selectedGender state
+  setSelectedGender: (gender: string) => void; // Setter for selectedGender
 };
 
 // Options for each category
@@ -60,6 +62,8 @@ const useStore = create<StoreState>((set) => ({
   setSelectedColors: (colors) => set({ selectedColors: colors }),
   selectedStyles: [],
   setSelectedStyles: (styles) => set({ selectedStyles: styles }),
+  selectedGender: "", // Initialize selectedGender as an empty string
+  setSelectedGender: (gender) => set({ selectedGender: gender }), // Setter for gender
 }));
 
 export { useStore, sizeOptions, colorOptions, styleOptions };

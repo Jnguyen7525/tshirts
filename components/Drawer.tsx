@@ -35,9 +35,7 @@ const Drawer: React.FC<DrawerProps> = ({
         >
           Close
         </button>
-        <div className="p-5 h-full">
-          {children}
-        </div>
+        <div className="p-5 h-full">{children}</div>
       </div>
 
       {/* Overlay */}
