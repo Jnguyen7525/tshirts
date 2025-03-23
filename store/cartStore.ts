@@ -10,6 +10,7 @@ type CartItem = {
   selectedSize: string | null;
   selectedColor: string | null;
   quantity: number; // Added quantity field
+  image: string; // Added image field
 };
 
 type StoreState = {

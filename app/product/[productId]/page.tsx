@@ -33,6 +33,8 @@ const productsData = [
       "Blank product sourced from Bangladesh",
     ],
     shipping: [{ Location: "United States", Delivery: "6–9 business days" }],
+    gender: "Men",
+    style: ["T-Shirt"],
   },
   {
     id: "2",
@@ -60,6 +62,8 @@ const productsData = [
       "Blank product sourced from Bangladesh",
     ],
     shipping: [{ Location: "United States", Delivery: "6–9 business days" }],
+    gender: "Men",
+    style: ["Oversized", "T-Shirt"],
   },
   {
     id: "3",
@@ -90,6 +94,8 @@ const productsData = [
       "Blank product sourced from Bangladesh",
     ],
     shipping: [{ Location: "United States", Delivery: "6–9 business days" }],
+    gender: "Men",
+    style: ["Sweater, Oversized"],
   },
   {
     id: "4",
@@ -120,6 +126,8 @@ const productsData = [
       "Blank product sourced from Bangladesh",
     ],
     shipping: [{ Location: "United States", Delivery: "6–9 business days" }],
+    gender: "Men",
+    style: ["Hoodie"],
   },
   {
     id: "5",
@@ -151,6 +159,8 @@ const productsData = [
       "Blank product sourced from Bangladesh",
     ],
     shipping: [{ Location: "United States", Delivery: "6–9 business days" }],
+    gender: "Men",
+    style: ["Sweater"],
   },
   {
     id: "6",
@@ -214,6 +224,8 @@ const productsData = [
       "Blank product sourced from Bangladesh",
     ],
     shipping: [{ Location: "United States", Delivery: "6–9 business days" }],
+    gender: "Men",
+    style: ["Sweater"],
   },
   {
     id: "7",
@@ -250,6 +262,8 @@ const productsData = [
       "Blank product sourced from Bangladesh",
     ],
     shipping: [{ Location: "United States", Delivery: "6–9 business days" }],
+    gender: "Men",
+    style: ["Sweater"],
   },
   // womens
   {
@@ -275,6 +289,8 @@ const productsData = [
       "Blank product sourced from Bangladesh",
     ],
     shipping: [{ Location: "United States", Delivery: "6–9 business days" }],
+    gender: "Women",
+    style: ["T-Shirt", "Cropped"],
   },
   {
     id: "9",
@@ -337,6 +353,8 @@ const productsData = [
       "Blank product sourced from Bangladesh",
     ],
     shipping: [{ Location: "United States", Delivery: "6–9 business days" }],
+    gender: "Women",
+    style: ["Sweater"],
   },
   {
     id: "10",
@@ -366,6 +384,8 @@ const productsData = [
       "Blank product sourced from Bangladesh",
     ],
     shipping: [{ Location: "United States", Delivery: "6–9 business days" }],
+    gender: "Women",
+    style: ["Sweater", "Cropped"],
   },
   {
     id: "11",
@@ -401,6 +421,8 @@ const productsData = [
       "Blank product sourced from Bangladesh",
     ],
     shipping: [{ Location: "United States", Delivery: "6–9 business days" }],
+    gender: "Women",
+    style: ["T-Shirt", "Cropped"],
   },
   {
     id: "12",
@@ -433,6 +455,8 @@ const productsData = [
       "Blank product sourced from Bangladesh",
     ],
     shipping: [{ Location: "United States", Delivery: "6–9 business days" }],
+    gender: "Women",
+    style: ["T-Shirt", "Cropped"],
   },
   {
     id: "13",
@@ -466,6 +490,8 @@ const productsData = [
       "Blank product sourced from Bangladesh",
     ],
     shipping: [{ Location: "United States", Delivery: "6–9 business days" }],
+    gender: "Women",
+    style: ["T-Shirt"],
   },
   {
     id: "14",
@@ -494,6 +520,8 @@ const productsData = [
       "Blank product sourced from Bangladesh",
     ],
     shipping: [{ Location: "United States", Delivery: "6–9 business days" }],
+    gender: "Women",
+    style: ["Sweater"],
   },
   {
     id: "15",
@@ -525,6 +553,8 @@ const productsData = [
       "Blank product sourced from Bangladesh",
     ],
     shipping: [{ Location: "United States", Delivery: "6–9 business days" }],
+    gender: "Women",
+    style: ["Sweater", "Oversized"],
   },
   {
     id: "16",
@@ -556,6 +586,8 @@ const productsData = [
       "Blank product sourced from Bangladesh",
     ],
     shipping: [{ Location: "United States", Delivery: "6–9 business days" }],
+    gender: "Women",
+    style: ["Sweater", "Hoodie"],
   },
   {
     id: "17",
@@ -586,6 +618,8 @@ const productsData = [
       "Blank product sourced from Bangladesh",
     ],
     shipping: [{ Location: "United States", Delivery: "6–9 business days" }],
+    gender: "Women",
+    style: ["T-Shirt"],
   },
   {
     id: "18",
@@ -616,6 +650,8 @@ const productsData = [
       "Blank product sourced from Bangladesh",
     ],
     shipping: [{ Location: "United States", Delivery: "6–9 business days" }],
+    gender: "Women",
+    style: ["Hoodie", "Cropped"],
   },
 ];
 
@@ -658,6 +694,7 @@ export default async function ProductPage({
             description={product.description}
             shipping={product.shipping}
             price={product.info}
+            image={product.image}
           />
         </div>
       </div>

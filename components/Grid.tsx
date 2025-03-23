@@ -4,10 +4,13 @@ import React from "react";
 interface Product {
   id: string; // Unique identifier for each product
   image: string; // URL of the product image
-  description: string; // Description of the product
+  description: string[]; // Description of the product
   colors?: { color: string; code: string }[];
   sizes?: string[];
   info: string; // Additional information about the product
+  style: string[];
+  gender: string;
+  name: string;
 }
 
 const Grid: React.FC<{ products: Product[] }> = ({ products }) => {
@@ -24,7 +27,7 @@ const Grid: React.FC<{ products: Product[] }> = ({ products }) => {
             alt={`Product ${product.id}`}
             className="w-full h-66 object-cover rounded-md mb-3 "
           />
-          <h3 className="text-lg font-semibold mb-2">{product.description}</h3>
+          <h3 className="text-lg font-semibold mb-2">{product.name}</h3>
           {/* <p className="text-sm text-gray-600">
             {product.colors.map((color) => (
               <span>{color.color}</span>

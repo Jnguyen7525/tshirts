@@ -13,6 +13,7 @@ interface ProductDetailsProps {
   description: string[]; // Array of description items
   shipping: { Location: string; Delivery: string }[]; // Array of shipping info
   price: string;
+  image:string;
 }
 
 const ProductDetails: React.FC<ProductDetailsProps> = ({
@@ -24,6 +25,7 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({
   description,
   shipping,
   price,
+  image
 }) => {
   const [openDescription, setOpenDescription] = useState(false);
   const [openShipping, setOpenShipping] = useState(false);
@@ -48,6 +50,7 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({
       selectedSize,
       selectedColor,
       quantity,
+      image
     });
 
     console.log(
