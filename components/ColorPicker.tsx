@@ -26,11 +26,11 @@ const ColorPicker = () => {
 
   return (
     <div className="flex flex-col items-center">
-      <div className="grid grid-cols-9 sm:grid-cols-5 gap-1">
+      <div className="grid grid-cols-9 sm:grid-cols-5 gap-2">
         {allColors.map((color) => (
           <button
             key={color.color}
-            className={`w-8 h-8 rounded  cursor-pointer hover:opacity-80 ${
+            className={`w-6 h-6 sm:w-8 sm:h-8 rounded  cursor-pointer hover:opacity-80 ${
               selectedColors.some((c) => c.color === color.color)
                 ? "border-blue-500  border-2"
                 : "border-gray-500  border-1"
