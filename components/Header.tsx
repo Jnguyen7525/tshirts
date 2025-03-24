@@ -75,12 +75,13 @@ function Header() {
       </div> */}
 
       <div className="flex items-center justify-center space-x-5 ">
-        <div className="flex items-center justify-center space-x-1 cursor-pointer hover:opacity-80">
+        <Link
+          href={"/signIn"}
+          className="flex items-center justify-center space-x-1 cursor-pointer hover:opacity-80"
+        >
           <IoPersonOutline className="text-lg" />
-          <Link href={"/signIn"} className="hidden sm:block">
-            Sign In
-          </Link>
-        </div>
+          <span className="hidden sm:block">Sign In</span>
+        </Link>
 
         {/* Cart */}
         <div
