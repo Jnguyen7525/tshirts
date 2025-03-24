@@ -1,5 +1,4 @@
 import Footer from "@/components/Footer";
-import Header from "@/components/Header";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -72,11 +71,6 @@ export default function ProductLayout({
             </button>
           </div>
         </div>
-        {/* <Header />
-      <div className="flex flex-1 justify-start items-start bg-[#effaf9] p-5">
-        {children}
-      </div>
-      <Footer /> */}
       </div>
       <Footer />
     </div>

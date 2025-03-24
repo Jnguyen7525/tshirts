@@ -3,18 +3,6 @@ import React from "react";
 import { productsData } from "@/products";
 import { useStore } from "@/store/store";
 
-interface Product {
-  id: string; // Unique identifier for each product
-  image: string; // URL of the product image
-  description: string[]; // Description of the product
-  colors?: { color: string; code: string }[];
-  sizes?: string[];
-  info: string; // Additional information about the product
-  style: string[];
-  gender: string;
-  name: string;
-}
-
 const Grid: React.FC = () => {
   // Zustand states
   const selectedSizes = useStore((state) => state.selectedSizes);
