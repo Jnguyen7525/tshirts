@@ -3,7 +3,7 @@ import { FaApplePay, FaCcPaypal, FaGooglePay } from "react-icons/fa";
 
 function Footer() {
   return (
-    <div className="flex flex-col space-y-16 bg-gradient-to-b from-[#e1e1e1] to-[#effaf9] -mx-5 px-10 py-20">
+    <div className="flex flex-col space-y-16 bg-gradient-to-b from-[#e1e1e1] to-[white] -mx-5 px-10 py-20">
       <div className="flex flex-wrap justify-between sm:justify-start sm:space-x-20 ">
         <div className="flex flex-col space-y-1">
           <div className="font font-semibold">Help</div>

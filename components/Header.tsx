@@ -77,7 +77,9 @@ function Header() {
       <div className="flex items-center justify-center space-x-5 ">
         <div className="flex items-center justify-center space-x-1 cursor-pointer hover:opacity-80">
           <IoPersonOutline className="text-lg" />
-          <span className="hidden sm:block">Sign In</span>
+          <Link href={"/signIn"} className="hidden sm:block">
+            Sign In
+          </Link>
         </div>
 
         {/* Cart */}
@@ -85,7 +87,6 @@ function Header() {
           className="flex items-center justify-center space-x-1 cursor-pointer hover:opacity-80 relative"
           onClick={() => setCartOpen(true)} // Open the cart drawer when clicking the cart icon
         >
-          {/* <div className="flex items-center justify-center space-x-1 cursor-pointer  hover:opacity-80 relative"> */}
           <HiOutlineShoppingBag className="text-lg" />
           <span className="hidden sm:block">Cart</span>
           {/* Cart count bubble */}
@@ -95,10 +96,8 @@ function Header() {
             </div>
           )}
         </div>
-        {/* Drawer for the Cart */}
-        {/* Drawer */}
 
-        {/* Drawer */}
+        {/* Drawer for the Cart */}
         <Drawer
           isOpen={isCartOpen}
           onClose={() => setCartOpen(false)}
