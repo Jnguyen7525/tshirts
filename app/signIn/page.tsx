@@ -8,11 +8,7 @@ export const metadata: Metadata = {
   description: "View detailed information about our products.",
 };
 
-export default function ProductLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function SignInPage() {
   return (
     // <div className="flex flex-col min-h-screen text-sm overflow-y-scroll overflow-x-hidden">
     //   <Header />
