@@ -38,7 +38,36 @@ export default function Home() {
       <div className="sticky top-0 z-50 ">
         <Header />
       </div>
+      {/* <div className="invisible md:visible   lg:w-[1280px] lg:h-[500px] object-cover -mx-5 -my-5">
+        <img
+          src={"Grand Opening_1280x500.png"}
+          alt={`sale`}
+          className="lg:w-[1280px] lg:h-[500px] object-cover md:w-[900px] md:h-[500px] "
+        />
+      </div>
 
+      <div className="w-[420px] h-[320px] md:hidden  object-cover -mx-5 -my-5 -mt-40">
+        <img
+          src={"Grand Opening_420x320.png"}
+          alt={`sale`}
+          className="w-[420px] h-[320px] md:hidden "
+        />
+      </div> */}
+      <div className="w-screen flex justify-center items-center bg-[#191919] -mx-5 -my-5">
+        {/* Large Banner for Medium to Large Screens */}
+        <img
+          src={"Grand Opening_1280x500.png"}
+          alt="sale"
+          className="hidden md:block w-full h-auto object-cover"
+        />
+
+        {/* Small Banner for Small Screens */}
+        <img
+          src={"Grand Opening_420x320.png"}
+          alt="sale"
+          className="block md:hidden w-screen h-auto object-cover"
+        />
+      </div>
       <Navbar />
       <div className="flex flex-col sm:flex-row justify-center sm:justify-between">
         <div className="">
