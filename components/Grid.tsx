@@ -79,6 +79,7 @@ const Grid: React.FC = () => {
   };
 
   return (
+    // !just a vertical grid mainly with everything together
     // <div className="grid gap-0  grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 rounded-sm overflow-hidden ">
     //   {filteredProducts.map((product) => (
     //     <Link
@@ -96,64 +97,140 @@ const Grid: React.FC = () => {
     //     </Link>
     //   ))}
     // </div>
+
+    // !each style has own section
+    // <div className="space-y-10 flex flex-col overflow-hidden">
+    //   {styles.map((style) => {
+    //     const productsForStyle = filteredProducts.filter((product) =>
+    //       product.style.includes(style)
+    //     );
+
+    //     if (productsForStyle.length === 0) return null;
+
+    //     return (
+    //       <div key={style} className="z-0">
+    //         {/* Style Header */}
+    //         <h2 className="text-xl font-bold mb-4 z-0">{style}</h2>
+
+    //         {/* Scrollable Section */}
+    //         <div className="relative z-0 flex flex-col space-y-2">
+    //           {/* Horizontal Scroller */}
+    //           <div
+    //             ref={(el) => {
+    //               scrollRefs.current[style] = el; // Correctly assign ref without returning any value
+    //             }}
+    //             onScroll={() => handleScroll(style)}
+    //             className="flex overflow-x-hidden w-[95vw] space-x-4 z-0 "
+    //           >
+    //             {productsForStyle.map((product) => (
+    //               <Link
+    //                 href={`/product/${product.id}`}
+    //                 key={product.id}
+    //                 className="flex-none w-64 bg-gradient-to-b from-[#e1e1e1] to-[#effaf9] p-4 flex flex-col items-center cursor-pointer hover:opacity-80 rounded-md"
+    //               >
+    //                 <img
+    //                   src={product.image}
+    //                   alt={`Product ${product.id}`}
+    //                   className="w-full h-52 object-cover rounded-md mb-3"
+    //                 />
+    //                 <h3 className="text-lg font-semibold mb-2">
+    //                   {product.name}
+    //                 </h3>
+    //                 <p className="text-sm text-gray-600">{product.info}</p>
+    //               </Link>
+    //             ))}
+    //           </div>
+
+    //           <div className="flex justify-between items-center relative">
+    //             {/* Scroll Indicator */}
+    //             <div className=" right-0 h-[2px] bg-gray-300 rounded-full mt-2 w-[75vw]">
+    //               <div
+    //                 className="h-full bg-black rounded-full"
+    //                 style={{ width: `${scrollProgress[style] || 0}%` }}
+    //               ></div>
+    //             </div>
+    //             <div className="flex space-x-5 items-center justify-center w-[90px]">
+    //               {/* Left Arrow */}
+
+    //               <GoChevronLeft
+    //                 onClick={() => scrollLeft(style)}
+    //                 className="  bg-white  text-gray-400 text-3xl cursor-pointer hover:bg-opacity-80"
+    //               />
+
+    //               {/* Right Arrow */}
+
+    //               <GoChevronRight
+    //                 onClick={() => scrollRight(style)}
+    //                 className="  bg-white  text-gray-400   text-3xl  cursor-pointer hover:bg-opacity-80"
+    //               />
+    //             </div>
+    //           </div>
+    //         </div>
+    //       </div>
+    //     );
+    //   })}
+    // </div>
+
+    // !combines tshirts w cropped, sweaters w hoddies, and oversized alone
     <div className="space-y-10 flex flex-col overflow-hidden">
-      {styles.map((style) => {
-        const productsForStyle = filteredProducts.filter((product) =>
-          product.style.includes(style)
+      {[
+        {
+          label: "T-Shirts & Cropped",
+          styles: ["T-Shirt", "Cropped"],
+          isTshirt: true,
+        },
+        {
+          label: "Oversized (Featured)",
+          styles: ["Oversized"],
+          isFeatured: true,
+        },
+        { label: "Sweaters & Hoodies", styles: ["Sweater", "Hoodie"] },
+      ].map((category) => {
+        const productsForCategory = filteredProducts.filter((product) =>
+          category.styles.some((style) => product.style.includes(style))
         );
 
-        if (productsForStyle.length === 0) return null;
-
-        // // Create a ref and state for scroll handling
-        // const scrollRef = useRef<HTMLDivElement>(null);
-        // const [scrollProgress, setScrollProgress] = useState(0);
-
-        // const handleScroll = () => {
-        //   if (scrollRef.current) {
-        //     const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
-        //     const maxScrollableWidth = scrollWidth - clientWidth;
-        //     const progress = (scrollLeft / maxScrollableWidth) * 100;
-        //     setScrollProgress(progress || 0); // Avoid NaN
-        //   }
-        // };
-
-        // const scrollLeft = () => {
-        //   if (scrollRef.current) {
-        //     scrollRef.current.scrollBy({ left: -300, behavior: "smooth" });
-        //   }
-        // };
-
-        // const scrollRight = () => {
-        //   if (scrollRef.current) {
-        //     scrollRef.current.scrollBy({ left: 300, behavior: "smooth" });
-        //   }
-        // };
+        if (productsForCategory.length === 0) return null;
 
         return (
-          <div key={style} className="z-0">
+          <div key={category.label} className="z-0">
             {/* Style Header */}
-            <h2 className="text-xl font-bold mb-4 z-0">{style}</h2>
+            <h2 className="text-xl font-bold mb-4 z-0">{category.label}</h2>
 
             {/* Scrollable Section */}
             <div className="relative z-0 flex flex-col space-y-2">
               {/* Horizontal Scroller */}
               <div
                 ref={(el) => {
-                  scrollRefs.current[style] = el; // Correctly assign ref without returning any value
+                  scrollRefs.current[category.label] = el; // Correctly assign ref without returning any value
                 }}
-                onScroll={() => handleScroll(style)}
+                onScroll={() => handleScroll(category.label)}
                 className="flex overflow-x-hidden w-[95vw] space-x-4 z-0 "
               >
-                {productsForStyle.map((product) => (
+                {productsForCategory.map((product) => (
                   <Link
                     href={`/product/${product.id}`}
                     key={product.id}
-                    className="flex-none w-64 bg-gradient-to-b from-[#e1e1e1] to-[#effaf9] p-4 flex flex-col items-center cursor-pointer hover:opacity-80 rounded-md"
+                    // className="flex-none w-64 bg-gradient-to-b from-[#e1e1e1] to-[#effaf9] p-4 flex flex-col items-center cursor-pointer hover:opacity-80 rounded-md"
+                    className={`flex-none ${
+                      category.isFeatured
+                        ? "w-96 bg-gradient-to-r from-blue-100 to-blue-200"
+                        : category.isTshirt && !category.isFeatured
+                        ? "w-40 bg-gradient-to-r from-blue-100 to-blue-200"
+                        : "w-64 bg-gradient-to-r from-blue-100 to-blue-200"
+                    } p-4 flex flex-col items-center cursor-pointer hover:opacity-80 rounded-md`}
                   >
                     <img
                       src={product.image}
                       alt={`Product ${product.id}`}
-                      className="w-full h-52 object-cover rounded-md mb-3"
+                      // className="w-full h-52 object-cover rounded-md mb-3"
+                      className={`w-full ${
+                        category.isFeatured
+                          ? "h-72"
+                          : category.isTshirt && !category.isFeatured
+                          ? "h-40"
+                          : "h-52"
+                      } object-cover rounded-md mb-3`}
                     />
                     <h3 className="text-lg font-semibold mb-2">
                       {product.name}
@@ -168,21 +245,23 @@ const Grid: React.FC = () => {
                 <div className=" right-0 h-[2px] bg-gray-300 rounded-full mt-2 w-[75vw]">
                   <div
                     className="h-full bg-black rounded-full"
-                    style={{ width: `${scrollProgress[style] || 0}%` }}
+                    style={{
+                      width: `${scrollProgress[category.label] || 0}%`,
+                    }}
                   ></div>
                 </div>
                 <div className="flex space-x-5 items-center justify-center w-[90px]">
                   {/* Left Arrow */}
 
                   <GoChevronLeft
-                    onClick={() => scrollLeft(style)}
+                    onClick={() => scrollLeft(category.label)}
                     className="  bg-white  text-gray-400 text-3xl cursor-pointer hover:bg-opacity-80"
                   />
 
                   {/* Right Arrow */}
 
                   <GoChevronRight
-                    onClick={() => scrollRight(style)}
+                    onClick={() => scrollRight(category.label)}
                     className="  bg-white  text-gray-400   text-3xl  cursor-pointer hover:bg-opacity-80"
                   />
                 </div>
