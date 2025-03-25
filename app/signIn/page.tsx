@@ -81,7 +81,7 @@ export default function SignInPage() {
             </button>
 
             <div className="w-3/4 flex flex-col justify-start text-xs space-y-2">
-              <p>Don't have an account?</p>
+              <p>Don&apos;t have an account?</p>
               <Link href={"/"} className="underline hover:opacity-80">
                 Create an account
               </Link>
