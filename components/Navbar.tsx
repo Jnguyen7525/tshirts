@@ -7,7 +7,7 @@ function Navbar() {
   const selectedGender = useStore((state) => state.selectedGender); // Get selected gender from store
   const setSelectedGender = useStore((state) => state.setSelectedGender); // Access setter
   return (
-    <div className="flex items-center justify-between space-x-10 px-5 py-3 -mx-5 bg-gradient-to-b from-[#e1e1e1] to-[#effaf9] text-sm">
+    <div className="flex items-center justify-start sm:justify-between sm:space-x-10 px-5 py-3 -mx-5 bg-gradient-to-b from-[#e1e1e1] to-[#effaf9] text-sm">
       <div className="flex space-x-5">
         <button
           onClick={() => setSelectedGender("Men")}
@@ -28,7 +28,7 @@ function Navbar() {
           Women
         </button>
       </div>
-      <div className="translate-y-2 z-50">
+      <div className="translate-y-2 z-50 -translate-x-8 sm:translate-0">
         <Filter />
       </div>
     </div>
