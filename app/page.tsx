@@ -41,21 +41,21 @@ export default function Home() {
       <div className="w-screen flex justify-center items-center bg-[#191919] -mx-5 -my-5">
         {/* Large Banner for Large Screens */}
         <img
-          src={"Grand Opening_1280x500.png"}
+          src={"Grand Opening 3840x2160.png"}
           alt="sale"
           className="hidden lg:block w-full h-auto object-cover"
         />
 
         {/* Medium Banner for Medium Screens */}
         <img
-          src={"Grand Opening_780x400.png"}
+          src={"tablet 2048x1536.png"}
           alt="sale"
           className="hidden md:block lg:hidden w-full h-auto object-cover"
         />
 
         {/* Small Banner for Small Screens */}
         <img
-          src={"Grand Opening_420x320.png"}
+          src={"mobile 1500x2668.png"}
           alt="sale"
           className="block md:hidden w-full h-auto object-cover"
         />
