@@ -21,7 +21,7 @@ const Drawer: React.FC<DrawerProps> = ({
       <div
         className={`fixed top-0 ${
           position === "right" ? "right-0" : "left-0"
-        } h-full w-[300px] bg-gradient-to-b from-[#e1e1e1] to-[#effaf9] shadow-lg transition-transform duration-300 z-40 ${
+        } h-full w-[300px] bg-gradient-to-b from-[#e1e1e1] to-[#effaf9] shadow-lg transition-transform duration-300 z-50 ${
           isOpen
             ? "translate-x-0"
             : position === "right"
