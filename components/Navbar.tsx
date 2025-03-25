@@ -28,7 +28,9 @@ function Navbar() {
           Women
         </button>
       </div>
-      <Filter />
+      <div className="translate-y-2 z-50">
+        <Filter />
+      </div>
     </div>
   );
 }

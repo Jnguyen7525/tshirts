@@ -130,19 +130,19 @@ const Grid: React.FC = () => {
         // };
 
         return (
-          <div key={style} className="">
+          <div key={style} className="z-0">
             {/* Style Header */}
-            <h2 className="text-xl font-bold mb-4">{style}</h2>
+            <h2 className="text-xl font-bold mb-4 z-0">{style}</h2>
 
             {/* Scrollable Section */}
-            <div className="relative overflow-x-scroll scrollbar-hide flex flex-col space-y-2">
+            <div className="relative z-0 flex flex-col space-y-2">
               {/* Horizontal Scroller */}
               <div
                 ref={(el) => {
                   scrollRefs.current[style] = el; // Correctly assign ref without returning any value
                 }}
                 onScroll={() => handleScroll(style)}
-                className="flex overflow-x-hidden w-[95vw] space-x-4 scrollbar-hide"
+                className="flex overflow-x-hidden w-[95vw] space-x-4 z-0 "
               >
                 {productsForStyle.map((product) => (
                   <Link
@@ -153,7 +153,7 @@ const Grid: React.FC = () => {
                     <img
                       src={product.image}
                       alt={`Product ${product.id}`}
-                      className="w-full h-44 object-cover rounded-md mb-3"
+                      className="w-full h-52 object-cover rounded-md mb-3"
                     />
                     <h3 className="text-lg font-semibold mb-2">
                       {product.name}

@@ -583,7 +583,7 @@ const productsData = [
     ],
     shipping: [{ Location: "United States", Delivery: "6–9 business days" }],
     gender: "Women",
-    style: ["Sweater", "Hoodie"],
+    style: ["Sweater", "Hoodie", "Oversized"],
   },
   {
     id: "17",
