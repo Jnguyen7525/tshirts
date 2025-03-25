@@ -36,9 +36,9 @@ function Header() {
   const handleMenuOpenToggle = () => {
     setMenuOpen(!menuOpen);
   };
-  const handleMenuOpenClose = () => {
-    setMenuOpen(false);
-  };
+  // const handleMenuOpenClose = () => {
+  //   setMenuOpen(false);
+  // };
 
   const genericHamburgerLine = `h-1 w-5 my-[1.5px] rounded-full bg-black transition ease transform duration-300`;
 
