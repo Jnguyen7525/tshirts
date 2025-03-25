@@ -99,85 +99,87 @@ function Header() {
         </div>
 
         {/* Drawer for the Cart */}
-        <Drawer
-          isOpen={isCartOpen}
-          onClose={() => setCartOpen(false)}
-          position="right"
-        >
-          <div className="h-full flex flex-col">
-            {/* Cart Content (Scrollable Area) */}
-            <div className="flex-1 overflow-y-auto space-y-5 pr-2">
-              <h2 className="font-bold text-lg mb-5">Your Cart</h2>
-              {cart.length === 0 ? (
-                <p>Your cart is empty.</p>
-              ) : (
-                cart.map((item) => (
-                  <div key={item.productId} className="flex items-center">
-                    {/* Product Image */}
-                    <img
-                      src={item.image}
-                      alt={item.name}
-                      className="w-20 h-30 object-cover mr-5"
-                    />
-                    <div className="flex-1">
-                      <h3 className="font-semibold">{item.name}</h3>
+        {isCartOpen && (
+          <Drawer
+            isOpen={isCartOpen}
+            onClose={() => setCartOpen(false)}
+            position="right"
+          >
+            <div className={"h-full flex flex-col"}>
+              {/* Cart Content (Scrollable Area) */}
+              <div className="flex-1 overflow-y-auto space-y-5 pr-2">
+                <h2 className="font-bold text-lg mb-5">Your Cart</h2>
+                {cart.length === 0 ? (
+                  <p>Your cart is empty.</p>
+                ) : (
+                  cart.map((item) => (
+                    <div key={item.productId} className="flex items-center">
+                      {/* Product Image */}
+                      <img
+                        src={item.image}
+                        alt={item.name}
+                        className="w-20 h-30 object-cover mr-5"
+                      />
+                      <div className="flex-1">
+                        <h3 className="font-semibold">{item.name}</h3>
 
-                      {/* <p className="text-sm text-gray-600">Price: {item.price}</p> */}
-                      <p className="text-sm text-gray-600"> {"$50"}</p>
-                      <div className="flex space-x-1">
-                        <p className="text-sm text-gray-600">
-                          {item.selectedSize || "N/A"}
-                        </p>
-                        <span>/</span>
-                        <p className="text-sm text-gray-600">
-                          {item.selectedColor || "N/A"}
-                        </p>
+                        {/* <p className="text-sm text-gray-600">Price: {item.price}</p> */}
+                        <p className="text-sm text-gray-600"> {"$50"}</p>
+                        <div className="flex space-x-1">
+                          <p className="text-sm text-gray-600">
+                            {item.selectedSize || "N/A"}
+                          </p>
+                          <span>/</span>
+                          <p className="text-sm text-gray-600">
+                            {item.selectedColor || "N/A"}
+                          </p>
+                        </div>
+                      </div>
+                      {/* Quantity and Remove */}
+                      <div className="flex flex-col items-center ">
+                        <input
+                          type="number"
+                          min="0"
+                          value={item.quantity}
+                          onChange={(e) =>
+                            handleUpdateQuantity(
+                              item.productId,
+                              Number(e.target.value)
+                            )
+                          }
+                          className="w-16 text-center border rounded"
+                        />
+                        <button
+                          className="px-2 py-1 cursor-pointer hover:text-red-600 flex items-center justify-center space-x-0.5"
+                          onClick={() => handleRemoveItem(item.productId)}
+                        >
+                          <span>Remove</span>
+                          <RiDeleteBin6Line />
+                        </button>
                       </div>
                     </div>
-                    {/* Quantity and Remove */}
-                    <div className="flex flex-col items-center ">
-                      <input
-                        type="number"
-                        min="0"
-                        value={item.quantity}
-                        onChange={(e) =>
-                          handleUpdateQuantity(
-                            item.productId,
-                            Number(e.target.value)
-                          )
-                        }
-                        className="w-16 text-center border rounded"
-                      />
-                      <button
-                        className="px-2 py-1 cursor-pointer hover:text-red-600 flex items-center justify-center space-x-0.5"
-                        onClick={() => handleRemoveItem(item.productId)}
-                      >
-                        <span>Remove</span>
-                        <RiDeleteBin6Line />
-                      </button>
-                    </div>
-                  </div>
-                ))
-              )}
-            </div>
+                  ))
+                )}
+              </div>
 
-            {/* Sticky Footer */}
-            <div className=" py-3 w-full border-t border-gray-400 sticky bottom-0">
-              <div className="flex justify-between px-4">
-                <h3 className="font-semibold ">Total:</h3>
-                <h3 className="font-semibold ">${totalPrice.toFixed(2)}</h3>
-              </div>
-              <div className="px-4 mt-3">
-                <button
-                  className="w-full  py-1 bg-blue-500 text-white rounded hover:bg-blue-600"
-                  onClick={() => alert("Proceed to Checkout")}
-                >
-                  Checkout
-                </button>
+              {/* Sticky Footer */}
+              <div className=" py-3 w-full border-t border-gray-400 sticky bottom-0">
+                <div className="flex justify-between px-4">
+                  <h3 className="font-semibold ">Total:</h3>
+                  <h3 className="font-semibold ">${totalPrice.toFixed(2)}</h3>
+                </div>
+                <div className="px-4 mt-3">
+                  <button
+                    className="w-full  py-1 bg-blue-500 text-white rounded hover:bg-blue-600"
+                    onClick={() => alert("Proceed to Checkout")}
+                  >
+                    Checkout
+                  </button>
+                </div>
               </div>
             </div>
-          </div>
-        </Drawer>
+          </Drawer>
+        )}
 
         {/* SUPER COOL ANIMATED HAMBURGER=>X CLOSE ICON HEHEHE */}
         <ClickOutsideWrapper isOpen={menuOpen} onClose={handleMenuOpenClose}>
