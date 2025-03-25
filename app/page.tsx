@@ -33,7 +33,7 @@ export default function Home() {
   };
 
   return (
-    <main className="bg-[white] px-5  max-w-[100vw] w-[100vw] min-h-[100vh] max-h-[100vh] h-auto flex flex-col relative overflow-y-scroll overflow-x-hidden space-y-10 text-[#272343] text-sm ">
+    <main className="bg-[white] px-5  max-w-[100vw] w-[100vw] min-h-[100vh] max-h-[100vh] h-auto flex flex-col relative overflow-y-scroll scrollbar-hide overflow-x-hidden space-y-10 text-[#272343] text-sm ">
       <div className="sticky top-0 z-50 ">
         <Header />
       </div>
