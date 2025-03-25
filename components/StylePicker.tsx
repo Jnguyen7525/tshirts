@@ -8,7 +8,6 @@ const styles: StyleOption[] = [
   "T-Shirt",
   "Oversized",
   "Cropped",
-  // "Tank Top",
   "Sweater",
   "Hoodie",
 ];
