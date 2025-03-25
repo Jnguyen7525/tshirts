@@ -3,14 +3,6 @@ import React, { useRef, useState } from "react";
 import { productsData } from "@/products";
 import { useStore } from "@/store/store";
 import { GoChevronLeft, GoChevronRight } from "react-icons/go";
-type StyleOption = string;
-const styles: StyleOption[] = [
-  "T-Shirt",
-  "Oversized",
-  "Cropped",
-  "Sweater",
-  "Hoodie",
-];
 
 const Grid: React.FC = () => {
   // Zustand states
