@@ -197,7 +197,7 @@ const Grid: React.FC = () => {
                   scrollRefs.current[category.label] = el; // Correctly assign ref without returning any value
                 }}
                 onScroll={() => handleScroll(category.label)}
-                className="flex overflow-x-hidden w-[95vw] space-x-4 z-0 "
+                className="flex overflow-x-scroll scrollbar-hide w-[95vw] space-x-4 z-0 "
               >
                 {productsForCategory.map((product) => (
                   <Link
