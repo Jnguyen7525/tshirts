@@ -138,7 +138,9 @@ const Grid: React.FC = () => {
             <div className="relative overflow-x-scroll scrollbar-hide flex flex-col space-y-2">
               {/* Horizontal Scroller */}
               <div
-                ref={(el) => (scrollRefs.current[style] = el)}
+                ref={(el) => {
+                  scrollRefs.current[style] = el; // Correctly assign ref without returning any value
+                }}
                 onScroll={() => handleScroll(style)}
                 className="flex overflow-x-hidden w-[95vw] space-x-4 scrollbar-hide"
               >
