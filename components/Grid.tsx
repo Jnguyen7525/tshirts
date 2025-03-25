@@ -206,10 +206,10 @@ const Grid: React.FC = () => {
                     // className="flex-none w-64 bg-gradient-to-b from-[#e1e1e1] to-[#effaf9] p-4 flex flex-col items-center cursor-pointer hover:opacity-80 rounded-md"
                     className={`flex-none ${
                       category.isFeatured
-                        ? "w-96 bg-gradient-to-r from-blue-100 to-blue-200"
+                        ? "w-96 bg-gradient-to-r from-[#e1e1e1] to-[#effaf9]"
                         : category.isTshirt && !category.isFeatured
-                        ? "w-40 bg-gradient-to-r from-blue-100 to-blue-200"
-                        : "w-64 bg-gradient-to-r from-blue-100 to-blue-200"
+                        ? "w-40 bg-gradient-to-r from-[#e1e1e1] to-[#effaf9]"
+                        : "w-64 bg-gradient-to-r from-[#e1e1e1] to-[#effaf9]"
                     } p-4 flex flex-col items-center cursor-pointer hover:opacity-80 rounded-md`}
                   >
                     <img
