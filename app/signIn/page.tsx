@@ -24,7 +24,7 @@ export default function SignInPage() {
           className="relative cursor-pointer hover:opacity-80  bg-white text-black "
         >
           {/* <div className="font-bold  text-lg  ">Rêve d'Audace</div> */}
-          <div className="font-bold text-lg">Rêve d&apos;Audace</div>
+          <div className="font-bold sm:text-lg">Rêve d&apos;Audace</div>
           {/* <div className="w-20 h-20 absolute -top-6 left-10 opacity-30  z-50">
           <Image
             className=" "
@@ -35,7 +35,7 @@ export default function SignInPage() {
           />
         </div> */}
         </Link>
-        <div className="flex space-x-2 mx-3 w-[200px] h-full">
+        <div className="flex space-x-2 mx-1 sm:mx-3 w-[200px] h-full">
           <div className=" flex w-[1px] bg-black" />
           <div className="text-xs">Login to Account</div>
         </div>

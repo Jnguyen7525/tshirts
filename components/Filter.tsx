@@ -35,7 +35,7 @@ function Filter() {
       <div
         className={`${
           openFilter
-            ? "flex flex-col space-y-5 absolute top-12 left-0 bg-gradient-to-b from-[#e1e1e1] to-[#effaf9] w-full  p-1  sm:p-5 rounded-sm "
+            ? "flex flex-col space-y-5 absolute top-12 left-0 bg-[#effaf9] w-full  p-1  sm:p-5 rounded-sm "
             : "hidden "
         } `}
       >
