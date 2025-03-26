@@ -167,12 +167,12 @@ const Grid: React.FC = () => {
     <div className="space-y-10 flex flex-col overflow-hidden">
       {[
         {
-          label: "T-Shirts & Cropped",
-          styles: ["T-Shirt", "Cropped"],
+          label: "T-Shirts",
+          styles: ["T-Shirt"],
           isTshirt: true,
         },
         {
-          label: "Oversized (Featured)",
+          label: "Trending Oversized Fashion",
           styles: ["Oversized"],
           isFeatured: true,
         },
