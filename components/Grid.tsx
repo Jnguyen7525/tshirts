@@ -185,77 +185,103 @@ const Grid: React.FC = () => {
         if (productsForCategory.length === 0) return null;
 
         return (
-          <div key={category.label} className="z-0">
-            {/* Style Header */}
-            <h2 className="text-xl font-bold mb-4 z-0">{category.label}</h2>
+          <div key={category.label}>
+            {category.label == "Sweaters & Hoodies" && (
+              <div className="w-screen flex justify-center items-center bg-[#191919] -mx-5 -my-5 mb-5">
+                {/* Large Banner for Large Screens */}
+                <img
+                  src={"sweaterbig.png"}
+                  alt="sale"
+                  className="hidden lg:block w-full h-auto object-cover"
+                />
 
-            {/* Scrollable Section */}
-            <div className="relative z-0 flex flex-col space-y-2">
-              {/* Horizontal Scroller */}
-              <div
-                ref={(el) => {
-                  scrollRefs.current[category.label] = el; // Correctly assign ref without returning any value
-                }}
-                onScroll={() => handleScroll(category.label)}
-                className="flex overflow-x-scroll scrollbar-hide w-[95vw] space-x-4 z-0 "
-              >
-                {productsForCategory.map((product) => (
-                  <Link
-                    href={`/product/${product.id}`}
-                    key={product.id}
-                    // className="flex-none w-64 bg-gradient-to-b from-[#e1e1e1] to-[#effaf9] p-4 flex flex-col items-center cursor-pointer hover:opacity-80 rounded-md"
-                    className={`flex-none ${
-                      category.isFeatured
-                        ? "w-96 bg-gradient-to-r from-[#e1e1e1] to-[#effaf9]"
-                        : category.isTshirt && !category.isFeatured
-                        ? "w-40 bg-gradient-to-r from-[#e1e1e1] to-[#effaf9]"
-                        : "w-64 bg-gradient-to-r from-[#e1e1e1] to-[#effaf9]"
-                    } p-4 flex flex-col items-center cursor-pointer hover:opacity-80 rounded-md`}
-                  >
-                    <img
-                      src={product.image}
-                      alt={`Product ${product.id}`}
-                      // className="w-full h-52 object-cover rounded-md mb-3"
-                      className={`w-full ${
-                        category.isFeatured
-                          ? "h-72"
-                          : category.isTshirt && !category.isFeatured
-                          ? "h-40"
-                          : "h-52"
-                      } object-cover rounded-md mb-3`}
-                    />
-                    <h3 className="text-lg font-semibold mb-2">
-                      {product.name}
-                    </h3>
-                    <p className="text-sm text-gray-600">{product.info}</p>
-                  </Link>
-                ))}
+                {/* Medium Banner for Medium Screens */}
+                <img
+                  src={"sweatermedium.png"}
+                  alt="sale"
+                  className="hidden md:block lg:hidden w-full h-auto object-cover"
+                />
+
+                {/* Small Banner for Small Screens */}
+                <img
+                  src={"sweatersmall.png"}
+                  alt="sale"
+                  className="block md:hidden w-full h-[auto] object-cover"
+                />
               </div>
+            )}
+            <div className="z-0">
+              {/* Style Header */}
+              <h2 className="text-xl font-bold mb-4 z-0">{category.label}</h2>
 
-              <div className="flex justify-between items-center relative">
-                {/* Scroll Indicator */}
-                <div className=" right-0 h-[2px] bg-gray-300 rounded-full mt-2 w-[75vw]">
-                  <div
-                    className="h-full bg-black rounded-full"
-                    style={{
-                      width: `${scrollProgress[category.label] || 0}%`,
-                    }}
-                  ></div>
+              {/* Scrollable Section */}
+              <div className="relative z-0 flex flex-col space-y-2">
+                {/* Horizontal Scroller */}
+                <div
+                  ref={(el) => {
+                    scrollRefs.current[category.label] = el; // Correctly assign ref without returning any value
+                  }}
+                  onScroll={() => handleScroll(category.label)}
+                  className="flex overflow-x-scroll scrollbar-hide w-[95vw] space-x-4 z-0 "
+                >
+                  {productsForCategory.map((product) => (
+                    <Link
+                      href={`/product/${product.id}`}
+                      key={product.id}
+                      // className="flex-none w-64 bg-gradient-to-b from-[#e1e1e1] to-[#effaf9] p-4 flex flex-col items-center cursor-pointer hover:opacity-80 rounded-md"
+                      className={`flex-none ${
+                        category.isFeatured
+                          ? "w-96 bg-gradient-to-r from-[#e1e1e1] to-[#effaf9]"
+                          : category.isTshirt && !category.isFeatured
+                          ? "w-40 bg-gradient-to-r from-[#e1e1e1] to-[#effaf9]"
+                          : "w-64 bg-gradient-to-r from-[#e1e1e1] to-[#effaf9]"
+                      } p-4 flex flex-col items-center cursor-pointer hover:opacity-80 rounded-md`}
+                    >
+                      <img
+                        src={product.image}
+                        alt={`Product ${product.id}`}
+                        // className="w-full h-52 object-cover rounded-md mb-3"
+                        className={`w-full ${
+                          category.isFeatured
+                            ? "h-72"
+                            : category.isTshirt && !category.isFeatured
+                            ? "h-40"
+                            : "h-52"
+                        } object-cover rounded-md mb-3`}
+                      />
+                      <h3 className="text-lg font-semibold mb-2">
+                        {product.name}
+                      </h3>
+                      <p className="text-sm text-gray-600">{product.info}</p>
+                    </Link>
+                  ))}
                 </div>
-                <div className="flex space-x-5 items-center justify-center w-[90px]">
-                  {/* Left Arrow */}
 
-                  <GoChevronLeft
-                    onClick={() => scrollLeft(category.label)}
-                    className="  bg-white  text-gray-400 text-3xl cursor-pointer hover:bg-opacity-80"
-                  />
+                <div className="flex justify-between items-center relative">
+                  {/* Scroll Indicator */}
+                  <div className=" right-0 h-[2px] bg-gray-300 rounded-full mt-2 w-[75vw]">
+                    <div
+                      className="h-full bg-black rounded-full"
+                      style={{
+                        width: `${scrollProgress[category.label] || 0}%`,
+                      }}
+                    ></div>
+                  </div>
+                  <div className="flex space-x-5 items-center justify-center w-[90px]">
+                    {/* Left Arrow */}
 
-                  {/* Right Arrow */}
+                    <GoChevronLeft
+                      onClick={() => scrollLeft(category.label)}
+                      className="  bg-white  text-gray-400 text-3xl cursor-pointer hover:bg-opacity-80"
+                    />
 
-                  <GoChevronRight
-                    onClick={() => scrollRight(category.label)}
-                    className="  bg-white  text-gray-400   text-3xl  cursor-pointer hover:bg-opacity-80"
-                  />
+                    {/* Right Arrow */}
+
+                    <GoChevronRight
+                      onClick={() => scrollRight(category.label)}
+                      className="  bg-white  text-gray-400   text-3xl  cursor-pointer hover:bg-opacity-80"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
