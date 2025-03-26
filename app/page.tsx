@@ -55,7 +55,7 @@ export default function Home() {
 
         {/* Small Banner for Small Screens */}
         <img
-          src={"mobile_1500x1500.png"}
+          src={"mobile2_1500x2668.png"}
           alt="sale"
           className="block md:hidden w-full h-auto object-cover"
         />
