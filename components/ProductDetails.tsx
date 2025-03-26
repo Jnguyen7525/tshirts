@@ -75,14 +75,14 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({
   }, [cart]);
 
   return (
-    <div className="flex flex-col items-start justify-start space-y-4">
+    <div className="flex flex-col items-start justify-start space-y-4 p-5 mb-5 w-screen">
       <h1 className="text-lg font-semibold">{name}</h1>
       <p className="text-gray-600">{info}</p>
 
       {color && (
         <div>
           <h3 className="font-semibold mb-2">Available Colors:</h3>
-          <div className="flex space-x-2">
+          <div className="flex flex-wrap space-x-2">
             {color.map((c) => (
               <span
                 key={c.color}
@@ -107,11 +107,11 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({
       {size && (
         <div>
           <h3 className="font-semibold mb-2">Available Sizes:</h3>
-          <div className="flex space-x-2">
+          <div className="flex flex-wrap space-x-2">
             {size.map((s) => (
               <span
                 key={s}
-                className={`border-2 rounded px-3 py-1 text-sm cursor-pointer hover:opacity-80 ${
+                className={`border bg-white rounded-sm px-3 py-[1px] text-sm cursor-pointer hover:opacity-80 ${
                   selectedSize === s
                     ? "border-blue-500 bg-blue-100"
                     : "border-gray-300 bg-gray-200"
@@ -138,13 +138,13 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({
           min="1"
           value={quantity}
           onChange={(e) => setQuantity(Number(e.target.value))}
-          className="border rounded px-2 py-1 w-16 text-center"
+          className="border rounded px-2 py-[1px] w-16 text-center"
         />
       </div>
 
       {/* Add to Cart Button */}
       <button
-        className="w-full py-1 text-white rounded-sm bg-[#272343] cursor-pointer hover:opacity-80"
+        className="w-full justify-center items-center py-[1px] text-white rounded-sm bg-[#272343] cursor-pointer hover:opacity-80"
         onClick={handleAddToCart}
       >
         Add to Cart
