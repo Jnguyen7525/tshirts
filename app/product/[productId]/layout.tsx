@@ -14,8 +14,10 @@ export default function ProductLayout({
 }>) {
   return (
     <div className="flex flex-col min-h-screen text-sm overflow-y-scroll overflow-x-hidden">
-      <Header />
-      <div className="flex flex-1 justify-start items-start bg-[#effaf9]">
+      <div className="border-b pb-2">
+        <Header />
+      </div>
+      <div className="flex flex-1 justify-start items-start bg-white">
         {children}
       </div>
       <Footer />

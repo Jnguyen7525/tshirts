@@ -23,7 +23,7 @@ export default async function ProductPage({
     return (
       <div className="flex flex-col w-full h-full justify-center items-start md:flex-row md:space-x-10   overflow-hidden max-w-4xl">
         {/* Image on the left */}
-        <div className="md:w-1/2 h-full  bg-gradient-to-b from-[#e1e1e1] to-[#effaf9]">
+        <div className="md:w-1/2 h-full  bg-white">
           <img
             src={product.image}
             alt={product.name}
