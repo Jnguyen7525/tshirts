@@ -12,7 +12,7 @@ function Navbar() {
         <button
           onClick={() => setSelectedGender("")}
           className={`cursor-pointer hover:opacity-80 bg-white rounded-sm px-3 py-[1px] ${
-            selectedGender === "Men" ? "opacity-80 text-blue-500" : ""
+            selectedGender === "" ? "opacity-80 text-blue-500" : ""
           }`}
         >
           All

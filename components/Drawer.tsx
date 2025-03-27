@@ -21,7 +21,7 @@ const Drawer: React.FC<DrawerProps> = ({
       <div
         className={`fixed top-0 ${
           position === "right" ? "-right-5" : "left-0"
-        } h-full w-[300px] bg-[#effaf9] shadow-lg transition-transform duration-300 z-50 ${
+        } h-full w-[320px] sm:w-[350px] bg-white shadow-lg transition-transform duration-300 z-50 ${
           isOpen
             ? "translate-x-0"
             : position === "right"
@@ -31,11 +31,11 @@ const Drawer: React.FC<DrawerProps> = ({
       >
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 text-lg font-semibold hover:opacity-80 cursor-pointer z-50"
+          className="absolute top-2 right-2 sm:top-4 sm:right-4 text-lg font-semibold hover:opacity-80 cursor-pointer z-50"
         >
           Close
         </button>
-        <div className="p-5 h-full">{children}</div>
+        <div className="p-2 sm:p-5 h-full">{children}</div>
       </div>
 
       {/* Overlay */}

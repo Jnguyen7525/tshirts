@@ -26,7 +26,7 @@ const ColorPicker = () => {
 
   return (
     <div className="flex flex-col items-center">
-      <div className="grid grid-cols-7 sm:grid-cols-5 gap-2">
+      <div className="grid grid-cols-6 sm:grid-cols-5 gap-1 sm:gap-2">
         {allColors.map((color) => (
           <button
             key={color.color}

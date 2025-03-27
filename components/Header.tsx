@@ -103,10 +103,10 @@ function Header() {
           onClose={() => setCartOpen(false)}
           position="right"
         >
-          <div className={"h-full flex flex-col"}>
+          <div className={"h-full flex flex-col p-1"}>
             {/* Cart Content (Scrollable Area) */}
             <div className="flex-1 overflow-y-auto space-y-5 pr-2">
-              <h2 className="font-bold text-lg mb-5">Your Cart</h2>
+              <h2 className="font-semibold text-lg mb-5">Your Cart</h2>
               {cart.length === 0 ? (
                 <p>Your cart is empty.</p>
               ) : (
@@ -116,7 +116,7 @@ function Header() {
                     <img
                       src={item.image}
                       alt={item.name}
-                      className="w-20 h-30 object-cover mr-5"
+                      className="w-30 h-30 object-cover mr-2"
                     />
                     <div className="flex-1">
                       <h3 className="font-semibold">{item.name}</h3>
@@ -134,7 +134,7 @@ function Header() {
                       </div>
                     </div>
                     {/* Quantity and Remove */}
-                    <div className="flex flex-col items-center ">
+                    <div className="flex flex-col items-center ml-2">
                       <input
                         type="number"
                         min="0"
@@ -188,7 +188,7 @@ function Header() {
           position="right"
         >
           {/* Menu Content */}
-          <div className="flex flex-col space-y-5">
+          <div className="flex flex-col space-y-5 p-2">
             {user && (
               <div className="cursor-pointer hover:opacity-80">Account</div>
             )}

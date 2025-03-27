@@ -25,7 +25,7 @@ const StylePicker: React.FC = () => {
 
   return (
     <div className="p-1">
-      <div className="grid grid-cols-2 sm:grid-cols-1 gap-1">
+      <div className="grid grid-cols-1 sm:gap-1">
         {styles.map((style) => (
           <label key={style} className="flex items-center">
             <input
