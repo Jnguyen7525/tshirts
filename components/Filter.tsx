@@ -14,28 +14,28 @@ function Filter() {
   const [openColor, setOpenColor] = useState(false);
 
   return (
-    <div className=" w-60 flex flex-col space-y-5  rounded-sm font-semibold text-sm relative ">
+    <div className="w-48 sm:w-72 flex flex-col space-y-5 translate-y-2 rounded-sm font-semibold text-sm relative ">
       <div
-        className="flex justify-center space-x-5 items-center   cursor-pointer hover:opacity-80"
+        className="flex justify-center space-x-5 items-center cursor-pointer hover:opacity-80"
         onClick={() => setOpenFilter(!openFilter)}
       >
-        {openFilter ? (
-          <IoFilterOutline className="rotate-180 bg-gradient-to-b from-[#e1e1e1] to-[#effaf9] rounded-full text-3xl p-2" />
+        {/* {openFilter ? (
+          <IoFilterOutline className="rotate-180  rounded-full text-3xl p-2" />
         ) : (
-          <IoFilterOutline className=" bg-gradient-to-b from-[#e1e1e1] to-[#effaf9] rounded-full text-3xl p-2" />
-        )}
+          <IoFilterOutline className="  rounded-full text-3xl p-2" />
+        )} */}
         <div>Filters</div>
         {openFilter ? (
-          <RxChevronDown className="rotate-180 bg-gradient-to-b from-[#e1e1e1] to-[#effaf9] rounded-full text-3xl p-2" />
+          <RxChevronDown className="rotate-180  rounded-full text-3xl p-2" />
         ) : (
-          <RxChevronDown className=" bg-gradient-to-b from-[#e1e1e1] to-[#effaf9] rounded-full text-3xl p-2" />
+          <RxChevronDown className="  rounded-full text-3xl p-2" />
         )}
       </div>
 
       <div
         className={`${
           openFilter
-            ? "flex flex-col space-y-5 absolute top-12 left-0 bg-[#effaf9] w-full  p-1  sm:p-5 rounded-sm "
+            ? "flex flex-col space-y-5 absolute top-12 left-0 bg-white w-full  p-1  sm:p-5 rounded-sm "
             : "hidden "
         } `}
       >
@@ -46,9 +46,9 @@ function Filter() {
           >
             <div>Style</div>
             {openStyle ? (
-              <RxChevronDown className="rotate-180 bg-gradient-to-b from-[#e1e1e1] to-[#effaf9] rounded-full text-3xl p-2" />
+              <RxChevronDown className="rotate-180  rounded-full text-3xl p-2" />
             ) : (
-              <RxChevronDown className=" bg-gradient-to-b from-[#e1e1e1] to-[#effaf9] rounded-full text-3xl p-2" />
+              <RxChevronDown className="  rounded-full text-3xl p-2" />
             )}
           </div>
           {openStyle && <StylePicker />}
@@ -61,9 +61,9 @@ function Filter() {
           >
             <div>Colour</div>
             {openColor ? (
-              <RxChevronDown className="rotate-180 bg-gradient-to-b from-[#e1e1e1] to-[#effaf9] rounded-full text-3xl p-2" />
+              <RxChevronDown className="rotate-180  rounded-full text-3xl p-2" />
             ) : (
-              <RxChevronDown className=" bg-gradient-to-b from-[#e1e1e1] to-[#effaf9] rounded-full text-3xl p-2" />
+              <RxChevronDown className="  rounded-full text-3xl p-2" />
             )}
           </div>
           {openColor && <ColorPicker />}
@@ -75,9 +75,9 @@ function Filter() {
           >
             <div>Size</div>
             {openSize ? (
-              <RxChevronDown className="rotate-180 bg-gradient-to-b from-[#e1e1e1] to-[#effaf9] rounded-full text-3xl p-2" />
+              <RxChevronDown className="rotate-180  rounded-full text-3xl p-2" />
             ) : (
-              <RxChevronDown className=" bg-gradient-to-b from-[#e1e1e1] to-[#effaf9] rounded-full text-3xl p-2" />
+              <RxChevronDown className="  rounded-full text-3xl p-2" />
             )}
           </div>
           {openSize && <SizeSelector />}

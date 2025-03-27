@@ -64,12 +64,10 @@ export default function Home() {
       <Navbar />
       {/* <div className="flex flex-col sm:flex-row justify-center sm:justify-between"> */}
       <div className="flex flex-col justify-center">
-        {/* <Filter /> */}
-
         <div className="flex flex-col flex-1">
-          <div className="p-5 flex items-center space-x-1 flex-wrap">
+          <div className=" flex items-center space-x-1 flex-wrap">
             {selectedSizes && (
-              <div className="rounded-sm   flex items-center space-x-1 justify-center ">
+              <div className="pb-5 rounded-sm   flex items-center space-x-1 justify-center ">
                 {selectedStyles.map((style) => (
                   <div
                     key={style}
@@ -84,7 +82,7 @@ export default function Home() {
               </div>
             )}
             {selectedColors && (
-              <div className="rounded-sm  flex items-center space-x-1 justify-center ">
+              <div className="pb-5 rounded-sm  flex items-center space-x-1 justify-center ">
                 {selectedColors.map((color) => (
                   <div
                     key={color.color}
@@ -102,7 +100,7 @@ export default function Home() {
               </div>
             )}
             {selectedStyles && (
-              <div className="rounded-sm  flex items-center space-x-1 justify-center ">
+              <div className="pb-5 rounded-sm  flex items-center space-x-1 justify-center ">
                 {selectedSizes.map((size) => (
                   <div
                     key={size}

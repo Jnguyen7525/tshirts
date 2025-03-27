@@ -75,38 +75,40 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({
   }, [cart]);
 
   return (
-    <div className="flex flex-col items-start justify-start space-y-4 p-5 mb-5 w-screen">
+    <div className="flex flex-col items-start justify-start space-y-3 p-5 mb-5 w-screen md:w-full">
       <h1 className="text-lg font-semibold">{name}</h1>
       <p className="text-gray-600">{info}</p>
 
       {color && (
         <div>
-          <h3 className="font-semibold mb-2">Available Colors:</h3>
+          <h3 className="font-semibold mb-2">Color:</h3>
           <div className="flex flex-wrap space-x-2">
             {color.map((c) => (
-              <span
-                key={c.color}
-                className={`w-6 h-6 rounded-full border-2 cursor-pointer hover:opacity-80 ${
+              <div
+                className={`w-8 h-8 flex items-center justify-center rounded-full border-1 ${
                   selectedColor === c.color
                     ? "border-blue-500"
-                    : "border-transparent"
+                    : "border-gray-300"
                 }`}
-                style={{ backgroundColor: c.code }}
-                onClick={() => setSelectedColor(c.color)}
-              />
+              >
+                <span
+                  key={c.color}
+                  className={`w-6 h-6 rounded-full  cursor-pointer hover:opacity-80 `}
+                  style={{ backgroundColor: c.code }}
+                  onClick={() => setSelectedColor(c.color)}
+                />
+              </div>
             ))}
           </div>
           {selectedColor && (
-            <p className="mt-2 text-sm text-gray-600">
-              Selected Color: {selectedColor}
-            </p>
+            <p className="mt-2 -mb-2 text-sm text-gray-600">{selectedColor}</p>
           )}
         </div>
       )}
 
       {size && (
         <div>
-          <h3 className="font-semibold mb-2">Available Sizes:</h3>
+          <h3 className="font-semibold mb-2">Size:</h3>
           <div className="flex flex-wrap space-x-2">
             {size.map((s) => (
               <span
@@ -123,9 +125,7 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({
             ))}
           </div>
           {selectedSize && (
-            <p className="mt-2 text-sm text-gray-600">
-              Selected Size: {selectedSize}
-            </p>
+            <p className="mt-2 -mb-2 text-sm text-gray-600">{selectedSize}</p>
           )}
         </div>
       )}
@@ -151,16 +151,16 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({
       </button>
 
       {description && (
-        <div className="flex flex-col w-[300px]">
+        <div className="flex flex-col w-full ">
           <div
             className="font-semibold flex justify-between items-center w-full cursor-pointer hover:opacity-80"
             onClick={() => setOpenDescription(!openDescription)}
           >
             <span>Product Description:</span>
             {openDescription ? (
-              <RxChevronDown className="rotate-180 bg-gradient-to-b from-[#e1e1e1] to-[#effaf9] rounded-full text-3xl p-2" />
+              <RxChevronDown className="rotate-180  rounded-full text-3xl p-2" />
             ) : (
-              <RxChevronDown className=" bg-gradient-to-b from-[#e1e1e1] to-[#effaf9] rounded-full text-3xl p-2" />
+              <RxChevronDown className="  rounded-full text-3xl p-2" />
             )}
           </div>
           {openDescription && (
@@ -174,16 +174,16 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({
       )}
 
       {shipping && (
-        <div className="flex flex-col w-[300px]">
+        <div className="flex flex-col w-full">
           <div
             className="font-semibold flex justify-between items-center cursor-pointer hover:opacity-80"
             onClick={() => setOpenShipping(!openShipping)}
           >
             <span>Shipping & Returns:</span>
             {openShipping ? (
-              <RxChevronDown className="rotate-180 bg-gradient-to-b from-[#e1e1e1] to-[#effaf9] rounded-full text-3xl p-2" />
+              <RxChevronDown className="rotate-180  rounded-full text-3xl p-2" />
             ) : (
-              <RxChevronDown className=" bg-gradient-to-b from-[#e1e1e1] to-[#effaf9] rounded-full text-3xl p-2" />
+              <RxChevronDown className=" rounded-full text-3xl p-2" />
             )}
           </div>
           {openShipping && (

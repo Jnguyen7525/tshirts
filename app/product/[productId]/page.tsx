@@ -21,17 +21,17 @@ export default async function ProductPage({
     }
 
     return (
-      <div className="flex flex-col w-full h-full justify-center items-start md:flex-row md:space-x-10   overflow-hidden max-w-4xl">
+      <div className="flex flex-col w-full h-full justify-center items-start md:flex-row md:space-x-10 overflow-hidden max-w-4xl">
         {/* Image on the left */}
         <div className="md:w-1/2 h-full  bg-white">
           <img
             src={product.image}
             alt={product.name}
-            className="w-full h-auto object-cover rounded-md flex justify-start p-16"
+            className="w-full h-auto object-cover rounded-md flex justify-start p-12"
           />
         </div>
         {/* Details on the right */}
-        <div className="flex flex-col items-start justify-start ">
+        <div className="flex flex-col items-start justify-start md:w-1/2">
           <ProductDetails
             productId={product.id}
             name={product.name}
