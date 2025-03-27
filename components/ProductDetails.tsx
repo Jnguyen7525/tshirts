@@ -85,6 +85,7 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({
           <div className="flex flex-wrap space-x-2">
             {color.map((c) => (
               <div
+                key={c.color}
                 className={`w-8 h-8 flex items-center justify-center rounded-full border-1 ${
                   selectedColor === c.color
                     ? "border-blue-500"
@@ -92,7 +93,6 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({
                 }`}
               >
                 <span
-                  key={c.color}
                   className={`w-6 h-6 rounded-full  cursor-pointer hover:opacity-80 `}
                   style={{ backgroundColor: c.code }}
                   onClick={() => setSelectedColor(c.color)}

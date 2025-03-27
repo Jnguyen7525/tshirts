@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from "react";
-import { IoFilterOutline } from "react-icons/io5";
 import { RxChevronDown } from "react-icons/rx";
 import ColorPicker from "./ColorPicker";
 import SizeSelector from "./SizePicker";
