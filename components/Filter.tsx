@@ -18,11 +18,6 @@ function Filter() {
         className="flex justify-center space-x-5 items-center cursor-pointer hover:opacity-80"
         onClick={() => setOpenFilter(!openFilter)}
       >
-        {/* {openFilter ? (
-          <IoFilterOutline className="rotate-180  rounded-full text-3xl p-2" />
-        ) : (
-          <IoFilterOutline className="  rounded-full text-3xl p-2" />
-        )} */}
         <div>Filters</div>
         {openFilter ? (
           <RxChevronDown className="rotate-180  rounded-full text-3xl p-2" />

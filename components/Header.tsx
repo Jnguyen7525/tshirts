@@ -47,30 +47,8 @@ function Header() {
   return (
     <div className="flex items-center justify-between  p-5 z-50 bg-white -mx-5 px-10">
       <Link href={"/"} className="relative cursor-pointer hover:opacity-80">
-        {/* <div className="font-bold  text-lg  ">Rêve d'Audace</div> */}
         <div className="font-bold text-lg">Rêve d&apos;Audace</div>
-        {/* <div className="w-20 h-20 absolute -top-6 left-7 opacity-30">
-          <Image
-            className=" "
-            alt={`carousel-image-`}
-            fill
-            quality={100}
-            src={"/mylogo.svg"}
-          />
-        </div> */}
       </Link>
-
-      {/* <div className="flex flex-1 mx-5 space-x-1 items-center justify-start bg-white border p-1 rounded-sm w-1/2">
-        <BsSearch className="" />
-        <input
-          // value={searchTerm}
-          type="text"
-          // placeholder="ticker"
-          // placeholder={`${selectedTicker.symbol}`}
-          className=" outline-none"
-          // onChange={handleSearch}
-        />
-      </div> */}
 
       <div className="flex items-center justify-center space-x-5 ">
         <Link
@@ -97,28 +75,30 @@ function Header() {
         </div>
 
         {/* Drawer for the Cart */}
-        {/* {isCartOpen && ( */}
         <Drawer
           isOpen={isCartOpen}
           onClose={() => setCartOpen(false)}
           position="right"
         >
-          <div className={"h-full flex flex-col p-1"}>
+          <div className={"h-full flex flex-col p-5"}>
             {/* Cart Content (Scrollable Area) */}
-            <div className="flex-1 overflow-y-auto space-y-5 pr-2">
+            <div className="flex-1 overflow-y-auto scrollbar-hide space-y-5">
               <h2 className="font-semibold text-lg mb-5">Your Cart</h2>
               {cart.length === 0 ? (
                 <p>Your cart is empty.</p>
               ) : (
                 cart.map((item) => (
-                  <div key={item.productId} className="flex items-center">
+                  <div
+                    key={item.productId}
+                    className="flex items-center w-full"
+                  >
                     {/* Product Image */}
                     <img
                       src={item.image}
                       alt={item.name}
                       className="w-30 h-30 object-cover mr-2"
                     />
-                    <div className="flex-1">
+                    <div className=" items-start justify- ml-5 flex flex-col">
                       <h3 className="font-semibold">{item.name}</h3>
 
                       {/* <p className="text-sm text-gray-600">Price: {item.price}</p> */}
@@ -132,28 +112,28 @@ function Header() {
                           {item.selectedColor || "N/A"}
                         </p>
                       </div>
-                    </div>
-                    {/* Quantity and Remove */}
-                    <div className="flex flex-col items-center ml-2">
-                      <input
-                        type="number"
-                        min="0"
-                        value={item.quantity}
-                        onChange={(e) =>
-                          handleUpdateQuantity(
-                            item.productId,
-                            Number(e.target.value)
-                          )
-                        }
-                        className="w-16 text-center border rounded"
-                      />
-                      <button
-                        className="px-2 py-1 cursor-pointer hover:text-red-600 flex items-center justify-center space-x-0.5"
-                        onClick={() => handleRemoveItem(item.productId)}
-                      >
-                        <span>Remove</span>
-                        <RiDeleteBin6Line />
-                      </button>
+                      {/* Quantity and Remove */}
+                      <div className="flex space-x-2 justify-between">
+                        <input
+                          type="number"
+                          min="0"
+                          value={item.quantity}
+                          onChange={(e) =>
+                            handleUpdateQuantity(
+                              item.productId,
+                              Number(e.target.value)
+                            )
+                          }
+                          className="w-10 text-center border rounded"
+                        />
+                        <button
+                          className=" py-1 cursor-pointer hover:text-red-600 flex items-center justify-center space-x-0.5"
+                          onClick={() => handleRemoveItem(item.productId)}
+                        >
+                          <span className="underline text-xs">Remove</span>
+                          <RiDeleteBin6Line />
+                        </button>
+                      </div>
                     </div>
                   </div>
                 ))
@@ -180,7 +160,6 @@ function Header() {
         {/* )} */}
 
         {/* SUPER COOL ANIMATED HAMBURGER=>X CLOSE ICON HEHEHE */}
-        {/* <ClickOutsideWrapper isOpen={menuOpen} onClose={handleMenuOpenClose}> */}
         {/* Drawer for the Menu */}
         <Drawer
           isOpen={menuOpen}
@@ -188,7 +167,7 @@ function Header() {
           position="right"
         >
           {/* Menu Content */}
-          <div className="flex flex-col space-y-5 p-2">
+          <div className="flex flex-col space-y-5 p-5 ">
             {user && (
               <div className="cursor-pointer hover:opacity-80">Account</div>
             )}
@@ -224,7 +203,6 @@ function Header() {
             }`}
           />
         </button>
-        {/* </ClickOutsideWrapper> */}
       </div>
     </div>
   );

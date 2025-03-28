@@ -55,14 +55,13 @@ export default function Home() {
 
         {/* Small Banner for Small Screens */}
         <img
-          src={"mobile2_1500x2668.png"}
+          src={"mobile_1500x1500.png"}
           alt="sale"
           className="block md:hidden w-full h-auto object-cover"
         />
       </div>
 
       <Navbar />
-      {/* <div className="flex flex-col sm:flex-row justify-center sm:justify-between"> */}
       <div className="flex flex-col justify-center">
         <div className="flex flex-col flex-1">
           <div className=" flex items-center space-x-1 flex-wrap">
